@@ -1,3 +1,53 @@
 body {
-    background: grey;
+    margin: 0;
 }
+
+
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+#content {
+    /* overflow: hidden; */
+}
+
+#nav-ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    background: aqua;
+    height: 75px;
+    width: 100%;
+    position: fixed;
+}
+
+.nav-list {
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    /* color: white; */
+    font-size: 32px;
+    font-family: cursive;
+}
+
+.nav-list:hover {
+    background: blue;
+}
+
+.home-content {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./images/3692584.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-color: black;
+}
+

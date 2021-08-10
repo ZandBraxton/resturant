@@ -33,3 +33,5 @@ const header = (() => {
     content.appendChild(navBar)
 
 })();
+
+homePage(content)
