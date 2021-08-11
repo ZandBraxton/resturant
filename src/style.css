@@ -11,6 +11,7 @@
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 
@@ -24,7 +25,7 @@ html {
 }
 
 #content {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #nav-ul {
@@ -52,7 +53,7 @@ html {
     display: block;
     padding: 35px 20px 0px 20px;
     font-size: 40px;
-    font-family: cursive;
+    font-family: Montserrat-Regular, sans-serif;
     font-weight: bold;
 }
 
@@ -78,7 +79,7 @@ html {
     background-color: black;
     filter: brightness(65%);
     position: absolute;
-    top: 0;
+    top: 125px;
     right: 0;
     left: 0;
     bottom: 0;
@@ -88,21 +89,24 @@ html {
 
 .headline {
     display: flex;
+    height: 100vh;
+    width: 100vw;
     flex-flow: column wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center;
-    padding-top: 50px;
+    padding-top: 80px;
     color: rgba(255, 255, 255, 1);
     font-family: Montserrat-Regular, sans-serif;
     font-size: 80px;
     text-shadow: 2px 2px black;
     position: relative;
+    
 }
 
 .sub-headline {
     text-align: center;
     font-size: 36px;
-    padding-top: 20px;
+    padding-top: 30px;
     color: rgba(255, 255, 255, 1);
 }
 
@@ -124,4 +128,36 @@ html {
     background-color: rgba(18, 18, 18, 1);
     border: rgba(18, 18, 18, 1);
     cursor: pointer;
+}
+
+.about-page {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./images/3692590.jpg);
+    background-position: top;
+    position: relative;
+    margin: auto;
+    filter: brightness(65%);
+    
+    
+    /* background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-color: black;
+    filter: brightness(65%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-position: center center;
+    background-size: cover; */
+
+    
+}
+
+.home-desc {
+    /* margin-top: 100px;
+    position: relative; */
 }
