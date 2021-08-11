@@ -12,6 +12,12 @@ const homePage = (() => {
         subHeadline.textContent = "Reserve your table today"
         subHeadline.classList.add('sub-headline')
         headline.appendChild(subHeadline)
+
+        const reserveBtn = document.createElement('button')
+        reserveBtn.classList.add('reserve')
+        reserveBtn.value = "#"
+        reserveBtn.textContent = "Book Table"
+        headline.appendChild(reserveBtn)
         
         content.appendChild(body)
         content.appendChild(headline)
