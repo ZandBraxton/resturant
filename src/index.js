@@ -7,9 +7,13 @@ const content = document.querySelector("#content")
 const header = (() => {
     const navBar = document.createElement('nav')
     const ul = document.createElement('ul')
+    const logo = document.createElement('h1')
     navBar.id = "navbar"
     ul.id = "nav-ul"
     navBar.appendChild(ul)
+    ul.appendChild(logo)
+    logo.textContent = "RESTAURANT"
+    logo.classList.add("logo")
     for (let i = 0; i < 3; i++) {
         let li = document.createElement('li')
         li.classList.add("nav-list")
