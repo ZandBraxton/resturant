@@ -35,6 +35,10 @@ const header = (() => {
     }
 
     content.appendChild(navBar)
+    const navSpacer = document.createElement('div')
+    navSpacer.classList.add("nav-spacer")
+    navSpacer.textContent = "&nbsp;"
+    content.appendChild(navSpacer)
 
 })();
 
