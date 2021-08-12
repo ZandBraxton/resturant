@@ -1,15 +1,20 @@
-const homePage = (() => {
-        function testAlert() {
-        console.log('test1')
+import createHomePage from './home.js'
+import createMenuPage from './menu.js';
+import createContactPage from './contact.js';
+
+
+function loadPage(state, main) {
+    switch (state) {
+        case "home":
+            createHomePage(main)
+            break;
+        case "menu":
+            createMenuPage(main)
+            break;
+        case "contact":
+            createContactPage(main)
+            break;
     }
+};
 
-    function testAlert2() {
-        console.log('test2')
-    }
-    return {testAlert, testAlert2}
-})();
-
-
-
-
-export default homePage;
+export default loadPage;

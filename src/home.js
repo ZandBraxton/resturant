@@ -1,4 +1,4 @@
-function createPage(content) {
+function createHomePage(main) {
     const body = document.createElement('div')
     body.classList.add("home-content")
     
@@ -39,10 +39,10 @@ function createPage(content) {
     descHeadline.appendChild(desc)
 
     //Append
-    content.appendChild(body)
-    content.appendChild(headline)
-    content.appendChild(aboutPage)
-    content.appendChild(descHeadline)
+    main.appendChild(body)
+    main.appendChild(headline)
+    main.appendChild(aboutPage)
+    main.appendChild(descHeadline)
     setTimeout(function () {transition(headline)}, 500)
     setTimeout(function () {transition(reserveBtn)}, 800)
     setTimeout(function () {transition(descHeadline)}, 1000)
@@ -52,4 +52,4 @@ function transition(element) {
     element.classList.add("show")
 }
 
-export default createPage;
+export default createHomePage;

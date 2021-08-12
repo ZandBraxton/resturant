@@ -1,8 +1,16 @@
-import './style.css'
-import homePage from './home.js';
-import testPage from './pageload.js';
+import './style.css';
+import loadPage from './pageload.js'
+import createHomePage from './home.js';
+import createMenuPage from './menu.js';
+
+
 
 const content = document.querySelector("#content")
+const main = document.createElement('div')
+main.id = "home"
+main.classList.add("main")
+main.classList.add("transition-wrapper")
+main.classList.add("show")
 
 const header = (() => {
     const navBar = document.createElement('nav')
@@ -39,7 +47,39 @@ const header = (() => {
     navSpacer.classList.add("nav-spacer")
     navSpacer.textContent = "&nbsp;"
     content.appendChild(navSpacer)
+    content.appendChild(main)
 
+    const tab = document.querySelectorAll('.nav-list')
+    tab.forEach(tab => {
+        tab.addEventListener('click', () => {
+            let change = tab.id
+            tabSwitch(change, main.id)
+        })
+    })
+
+    function tabSwitch(change, state) {
+        if (change === state) {
+            return
+        }
+        main.classList.remove('show')
+        setTimeout(function () {removePage()}, 500)
+        setTimeout(function () {loadPage(change, main)}, 600)
+        setTimeout(function () {transition(main)}, 600)
+        main.id = change
+
+    }
+
+    function removePage() {
+         while (main.firstChild) {
+             main.removeChild(main.lastChild)
+         }
+        }
+
+    function transition(element) {
+        element.classList.add("show")
+    }
+    
+        
 })();
 
-homePage(content)
+loadPage(main.id, main)
