@@ -18,14 +18,24 @@ body {
 html {
     box-sizing: border-box;
     font-family: sans-serif;
+    transition: opacity 0ms 350ms ease-in-out;
 }
 
 *, *::before, *::after {
     box-sizing: inherit;
 }
 
-#content {
-    /* overflow: hidden; */
+.transition-wrapper {
+	-webkit-transition: opacity 400ms 0ms ease-in;
+	-moz-transition: opacity 400ms 0ms ease-in;
+	-ms-transition: opacity 400ms 0ms ease-in;
+	-o-transition: opacity 400ms 0ms ease-in;
+	transition: opacity 400ms 0ms ease-in;
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
 }
 
 #nav-ul {
@@ -34,7 +44,8 @@ html {
     justify-content: flex-end;
     list-style: none;
     margin: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(18, 18, 18, 1);
+    color: white;
     height: 125px;
     width: 100%;
     position: fixed;
@@ -58,9 +69,10 @@ html {
 }
 
 .nav-list:hover {
-    background: rgb(218, 218, 218);
-    border-radius: 30%;
-    /* outline: 1px solid rgb(143, 142, 142); */
+    background: rgb(61, 61, 61);
+    border-radius: 40%;
+    text-shadow: 1px 1px black;
+    cursor: pointer;
 }
 
 .nav-spacer {
@@ -76,7 +88,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-    background-color: black;
+    background-color: white;
     filter: brightness(65%);
     position: absolute;
     top: 125px;
@@ -94,7 +106,7 @@ html {
     flex-flow: column wrap;
     justify-content: flex-start;
     align-content: center;
-    padding-top: 80px;
+    padding-top: 150px;
     color: rgba(255, 255, 255, 1);
     font-family: Montserrat-Regular, sans-serif;
     font-size: 80px;
@@ -115,7 +127,7 @@ html {
     width: 500px;
     height: 200px;
     margin-top: 100px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     font-family: Montserrat-Regular, sans-serif;
     font-size: 72px;
@@ -136,28 +148,36 @@ html {
     width: 100vw;
     background-image: url(./images/3692590.jpg);
     background-position: top;
-    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    position: absolute;
     margin: auto;
     filter: brightness(65%);
-    
-    
-    /* background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    background-color: black;
-    filter: brightness(65%);
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-position: center center;
-    background-size: cover; */
-
-    
+    overflow: auto;
 }
 
+.desc-headline {
+    height: 600px;
+    width: 500px;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    background-color: rgba(18, 18, 18, 0.7);
+    color: white;
+    outline: 3px solid black;
+    margin: 100px 0px 0px 200px;
+    padding-top: 20px;
+    font-size: 48px;
+    font-family: Montserrat-Regular, sans-serif;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    position: relative;
+}
+
+
 .home-desc {
-    /* margin-top: 100px;
-    position: relative; */
+    margin: 30px 0px 0px 20px;
+    font-size: 22px;
+    text-align: left;
 }
