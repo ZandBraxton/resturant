@@ -7,7 +7,7 @@ import createMenuPage from './menu.js';
 
 const content = document.querySelector("#content")
 const main = document.createElement('div')
-main.id = "home"
+main.id = "menu"
 main.classList.add("main")
 main.classList.add("transition-wrapper")
 main.classList.add("show")

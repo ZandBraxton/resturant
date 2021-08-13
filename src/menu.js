@@ -1,55 +1,181 @@
-function createMenuPage(content) {
+function createMenuPage(main) {
     const body = document.createElement('div')
-    body.classList.add("home-content")
+    body.classList.add("menu-content")
     
-    //Headline
-    const headline = document.createElement('div')
-    headline.textContent = "MENU PAGE"
-    headline.classList.add("headline")
-    headline.classList.add("transition-wrapper")
-    
-    //Subheadline
-    const subHeadline = document.createElement('div')
-    subHeadline.textContent = "Reserve your table today"
-    subHeadline.classList.add('sub-headline')
-    headline.appendChild(subHeadline)
-    
-    //Book table button
-    const reserveBtn = document.createElement('button')
-    reserveBtn.classList.add('reserve')
-    reserveBtn.classList.add('transition-wrapper')
-    reserveBtn.value = "#"
-    reserveBtn.textContent = "Book Table"
-    headline.appendChild(reserveBtn)
+    //menu headline
+    const menuHead = document.createElement('h1')
+    menuHead.textContent = "MENU"
+    menuHead.classList.add("menu-head")
+    menuHead.classList.add("transition-wrapper")
+    body.appendChild(menuHead)
 
-    //about body
-    const aboutPage = document.createElement('div')
-    aboutPage.classList.add('about-page')
-    
-    //desc headline
-    const descHeadline = document.createElement('div')
-    descHeadline.classList.add('desc-headline')
-    descHeadline.classList.add('transition-wrapper')
-    descHeadline.textContent = "STORY"
+    //breaker
+    const line = linebreak(body)
+    line.classList.add("transition-wrapper")
 
-    //Description
-    const desc = document.createElement('p')
-    desc.classList.add('home-desc')
-    desc.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lorem sapien, ultricies sit amet condimentum eget, scelerisque et erat. Duis vitae nibh lectus. Aenean ullamcorper iaculis arcu vel hendrerit. Pellentesque justo odio, elementum ac elit in, iaculis eleifend nisl. Nunc non consectetur dolor. Donec quam metus, dictum vel consectetur quis, bibendum sed orci. Donec vel sagittis lectus, blandit egestas erat. Quisque tincidunt eros mi, vitae suscipit neque imperdiet eget. Curabitur quam velit, lacinia ut metus sed, volutpat scelerisque leo. Phasellus sed purus at velit condimentum rutrum in in mauris. "
-    descHeadline.appendChild(desc)
+    //menu contents
+    const menuBody = document.createElement('div')
+    menuBody.classList.add('menu-body')
+    menuBody.classList.add('transition-wrapper')
+    body.appendChild(menuBody)
+    createSectionHeader("Breakfast", menuBody)
+
+    menuBody.appendChild(
+        createMenuSection("Breakfast")
+    )
+    linebreak(menuBody)
+    createSectionHeader("Lunch", menuBody)
+
+    menuBody.appendChild(
+        createMenuSection("Lunch")
+    )
+    linebreak(menuBody)
+    createSectionHeader("Dinner", menuBody)
+
+    menuBody.appendChild(
+        createMenuSection("Dinner")
+    )
+
+    
+    
+    // menuSection.appendChild(
+    //     createMenuItem(
+    //         "EGGS BENEDICT",
+    //         "11",
+    //         "Poached eggs, cured ham and harissa hollandaise on an English muffin"
+    //         )
+    //     );
+    // menuSection.appendChild(
+    //     createMenuItem(
+    //         "VEGGIE BREAKFAST PLATE",
+    //         "10",
+    //         "Smashed avo, veggie sausage, mushrooms, confit tomatoes, hash brown, toasted white bloomer and eggs"
+    //         )
+    //     );
+    //     menuSection.appendChild(
+    //         createMenuItem(
+    //             "MOROCCAN BREAKFAST",
+    //             "13",
+    //             "French toast with figs, honey, labneh and crushed hazelnuts"
+    //             )
+    //         );
+    //     menuSection.appendChild(
+    //         createMenuItem(
+    //             "SALMON AND CREAM CHEESE",
+    //             "7",
+    //             "Smoked salmon with a lemon, dill and pepper cream cheese on a toasted wheat grain bloomer"
+    //             )
+    //         );
+    //     menuSection.appendChild(
+    //         createMenuItem(
+    //             "MAPLE AND BACON PANCAKES",
+    //             "11",
+    //             "American-style pancakes, streaky bacon, maple syrup and maple butter"
+    //             )
+    //         );
+    //     menuSection.appendChild(
+    //         createMenuItem(
+    //             "MEXICAN TOSTADA PLATE",
+    //             "9.5",
+    //             "Slow cooked marinated pork, avocado, refried beans and a fried egg on a flour tortilla"
+    //             )
+    //         );    
+   
+    
+    
 
     //Append
-    content.appendChild(body)
-    content.appendChild(headline)
-    content.appendChild(aboutPage)
-    content.appendChild(descHeadline)
-    setTimeout(function () {transition(headline)}, 500)
-    setTimeout(function () {transition(reserveBtn)}, 800)
-    setTimeout(function () {transition(descHeadline)}, 1000)
+    main.appendChild(body)
+    setTimeout(function () {transition(menuHead)}, 500)
+    setTimeout(function () {transition(line)}, 800)
+    setTimeout(function () {transition(menuBody)}, 1000)
+    
 }
 
 function transition(element) {
     element.classList.add("show")
+}
+
+function createSectionHeader(name, element) {
+    const sectionHeader = document.createElement('div')
+    sectionHeader.classList.add('section-header')
+    sectionHeader.textContent = name
+    element.appendChild(sectionHeader)
+    // return sectionHeader
+}
+
+function createMenuSection(name) {
+    const menuSection = document.createElement('div')
+    menuSection.classList.add('menu-section')
+    menuSection.id = name
+
+    menuSection.appendChild(
+        createMenuItem(
+            "EGGS BENEDICT",
+            "11",
+            "Poached eggs, cured ham and harissa hollandaise on an English muffin"
+            )
+        );
+    menuSection.appendChild(
+        createMenuItem(
+            "VEGGIE BREAKFAST PLATE",
+            "10",
+            "Smashed avo, veggie sausage, mushrooms, confit tomatoes, hash brown, toasted white bloomer and eggs"
+            )
+        );
+        menuSection.appendChild(
+            createMenuItem(
+                "MOROCCAN BREAKFAST",
+                "13",
+                "French toast with figs, honey, labneh and crushed hazelnuts"
+                )
+            );
+        menuSection.appendChild(
+            createMenuItem(
+                "SALMON AND CREAM CHEESE",
+                "7",
+                "Smoked salmon with a lemon, dill and pepper cream cheese on a toasted wheat grain bloomer"
+                )
+            );
+        menuSection.appendChild(
+            createMenuItem(
+                "MAPLE AND BACON PANCAKES",
+                "11",
+                "American-style pancakes, streaky bacon, maple syrup and maple butter"
+                )
+            );
+        menuSection.appendChild(
+            createMenuItem(
+                "MEXICAN TOSTADA PLATE",
+                "9.5",
+                "Slow cooked marinated pork, avocado, refried beans and a fried egg on a flour tortilla"
+                )
+            );    
+    return menuSection
+}
+
+
+function createMenuItem (name, amount, ingredients) {
+    const menuItem = document.createElement('div')
+    menuItem.classList.add('menu-item')
+    menuItem.textContent = name
+    const price = document.createElement('span')
+    price.classList.add('menu-price')
+    price.textContent = amount
+    menuItem.appendChild(price)
+
+    const menuIngredient = document.createElement('div')
+    menuIngredient.classList.add("menu-ingredient")
+    menuIngredient.textContent = ingredients
+    menuItem.appendChild(menuIngredient)
+    return menuItem
+}
+
+function linebreak(element) {
+    const lineBreak = document.createElement('hr')
+    lineBreak.classList.add("break")
+    element.appendChild(lineBreak)
+    return lineBreak
 }
 
 export default createMenuPage;
