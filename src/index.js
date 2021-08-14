@@ -1,10 +1,7 @@
 import './style.css';
 import loadPage from './pageload.js'
-import createHomePage from './home.js';
-import createMenuPage from './menu.js';
 
-
-
+//init 
 const content = document.querySelector("#content")
 const main = document.createElement('div')
 main.id = "home"
@@ -41,14 +38,16 @@ const header = (() => {
         }
         ul.appendChild(li)
     }
-
     content.appendChild(navBar)
+
+    //nav spacer 
     const navSpacer = document.createElement('div')
     navSpacer.classList.add("nav-spacer")
     navSpacer.textContent = "&nbsp;"
     content.appendChild(navSpacer)
     content.appendChild(main)
 
+    //event listener
     const tab = document.querySelectorAll('.nav-list')
     tab.forEach(tab => {
         tab.addEventListener('click', () => {

@@ -66,13 +66,15 @@ html {
     font-size: 40px;
     font-family: Montserrat-Regular, sans-serif;
     font-weight: bold;
+    border-radius: 40%;
 }
 
 .nav-list:hover {
-    background: rgb(61, 61, 61);
+    background: rgba(255, 255, 255, 0.13);
     border-radius: 40%;
     text-shadow: 1px 1px black;
     cursor: pointer;
+    transition: all 0.3s;
 }
 
 .nav-spacer {
@@ -145,6 +147,7 @@ html {
     background-color: rgba(18, 18, 18, 1);
     border: rgba(18, 18, 18, 1);
     cursor: pointer;
+    transition: all 0.3s;
 }
 
 .about-page {
@@ -206,6 +209,7 @@ html {
     background-color: rgb(190, 49, 49);
     width: 50%;
     margin: 60px auto 40px auto;
+    font-family: Montserrat-Regular, sans-serif;
 }
 
 .break {
@@ -214,18 +218,6 @@ html {
     margin-bottom: 15px;
 }
 
-.menu-body {
-    /* display: grid;
-    grid-template-columns: repeat(3, 18em);
-    grid-template-rows: repeat(3, 4em);
-    gap: 3em;
-    /* outline: 1px solid red; */
-    /* width: 60%;
-    height: auto;
-    margin: auto;
-    justify-content: center;
-    justify-items: start; */
-}
 
 .section-header {
     font-size: 24px;
@@ -240,7 +232,6 @@ html {
     grid-template-columns: repeat(3, 18em);
     grid-template-rows: repeat(2, 5em);
     gap: 3em;
-    /* outline: 1px solid red; */
     width: 60%;
     height: auto;
     margin: auto auto 100px auto;
@@ -255,8 +246,8 @@ html {
     color: rgb(0, 0, 0);
     font-size: 13px;
     font-weight: 800;
+    font-family: Montserrat-Bold, sans-serif;
     line-height: 1.2em;
-    /* outline: 1px solid green; */
     break-inside: avoid;
 }
 
@@ -270,5 +261,74 @@ html {
     color: rgba(0, 0, 0, 0.767);
     margin-top: 3px;
     width: 70%;
+    font-family: Montserrat-Regular, sans-serif;
 }
 
+.contact-content {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-color: rgba(18, 18, 18, 1);
+    position: absolute;
+    top: 125px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.contact-head {
+    text-align: center;
+    font-size: 72px;
+    color: rgba(18, 18, 18, 1);
+    margin: 60px auto 40px auto;
+    font-family: Montserrat-Regular, sans-serif;
+    background-color: white;
+}
+
+.contact-section {
+    display: flex;
+}
+
+.contact-list {
+    display: flex;
+    flex-flow: column;
+    width: 500px;
+    height: auto;
+    margin: 50px auto auto 200px;
+    font-family: Montserrat-Regular, sans-serif;
+    background-color: white;
+}
+
+.contact-list-item {
+    font-size: 30px;
+    margin: 10px 0 10px 10px;
+}
+
+.contact-desc {
+    margin: 10px 0 auto 10px;
+    color: rgba(0, 0, 0, 0.7)
+}
+
+.br {
+    margin-bottom: 60px;
+}
+
+.review-block {
+    display: flex;
+    flex-flow: column;
+    width: 550px;
+    height: 540px;
+    margin: 50px auto auto 200px;
+    font-family: Montserrat-Bold, sans-serif;
+    font-size: 18px;
+    line-height: 1.8em;
+    break-inside: avoid;
+   
+    
+}
+
+.review {
+    color: rgba(255, 255, 255, 0.781);
+    margin: 15px 0 30px 10px;
+}
